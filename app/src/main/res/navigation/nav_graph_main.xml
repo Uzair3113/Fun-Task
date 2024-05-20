@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.funprimetask.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_apiCallFragment"
+            app:destination="@id/apiCallFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/apiCallFragment"
+        android:name="com.example.funprimetask.fragments.ApiCallFragment"
+        android:label="fragment_api_call"
+        tools:layout="@layout/fragment_api_call">
+        <action
+            android:id="@+id/action_apiCallFragment_to_itemViewFragment"
+            app:destination="@id/itemViewFragment" />
+        <argument
+            android:name="imageTitle"
+            app:argType="string" />
+        <argument
+            android:name="imageURL"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemViewFragment"
+        android:name="com.example.funprimetask.fragments.ItemViewFragment"
+        android:label="fragment_item_view"
+        tools:layout="@layout/fragment_item_view">
+        <action
+            android:id="@+id/action_itemViewFragment_to_exitAppFragment"
+            app:destination="@id/exitAppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exitAppFragment"
+        android:name="com.example.funprimetask.fragments.ExitAppFragment"
+        android:label="fragment_exit_app"
+        tools:layout="@layout/fragment_exit_app" />
+</navigation>
